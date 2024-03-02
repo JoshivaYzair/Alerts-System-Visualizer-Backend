@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VSuw8f1Di3pxiYNvu4NJifNDzlznLyi5OqjYuCrzPFc=",
+  "Source": "Alerts.Backend",
+  "BasePath": "_content/Alerts.Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

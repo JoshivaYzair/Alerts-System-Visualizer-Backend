@@ -1,0 +1,15 @@
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\bin\Debug\net6.0\Alerts.Logic.deps.json
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\bin\Debug\net6.0\Alerts.Logic.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\bin\Debug\net6.0\Alerts.Logic.pdb
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\bin\Debug\net6.0\Alerts.Persistence.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\bin\Debug\net6.0\Alerts.Persistence.pdb
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.csproj.AssemblyReference.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.AssemblyInfoInputs.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.AssemblyInfo.cs
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.csproj.CoreCompileInputs.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.csproj.CopyComplete
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\refint\Alerts.Logic.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\Alerts.Logic.pdb
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Logic\obj\Debug\net6.0\ref\Alerts.Logic.dll

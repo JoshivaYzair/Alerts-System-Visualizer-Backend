@@ -1,0 +1,14 @@
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\bin\Debug\net6.0\Alerts.Persistence.deps.json
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\bin\Debug\net6.0\Alerts.Persistence.runtimeconfig.json
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\bin\Debug\net6.0\Alerts.Persistence.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\bin\Debug\net6.0\Alerts.Persistence.pdb
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.csproj.AssemblyReference.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.AssemblyInfoInputs.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.AssemblyInfo.cs
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\refint\Alerts.Persistence.dll
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.pdb
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\Alerts.Persistence.genruntimeconfig.cache
+C:\Users\joshi\OneDrive\Documentos\.net\Alerts.Backend\Alerts.Persistence\obj\Debug\net6.0\ref\Alerts.Persistence.dll
