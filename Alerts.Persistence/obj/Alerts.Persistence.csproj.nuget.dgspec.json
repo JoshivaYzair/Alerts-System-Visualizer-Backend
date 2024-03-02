@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Persistence\\Alerts.Persistence.csproj": {}
+    "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Persistence\\Alerts.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Persistence\\Alerts.Persistence.csproj": {
+    "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Persistence\\Alerts.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Persistence\\Alerts.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Persistence\\Alerts.Persistence.csproj",
         "projectName": "Alerts.Persistence",
-        "projectPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Persistence\\Alerts.Persistence.csproj",
+        "projectPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Persistence\\Alerts.Persistence.csproj",
         "packagesPath": "C:\\Users\\joshi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joshi\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -2822,11 +2822,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Backend\\Alerts.Backend.csproj",
+      "projectUniqueName": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Backend\\Alerts.Backend.csproj",
       "projectName": "Alerts.Backend",
-      "projectPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Backend\\Alerts.Backend.csproj",
+      "projectPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Backend\\Alerts.Backend.csproj",
       "packagesPath": "C:\\Users\\joshi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Backend\\obj\\",
+      "outputPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2843,8 +2843,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Logic\\Alerts.Logic.csproj": {
-              "projectPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\.net\\Alerts.Backend\\Alerts.Logic\\Alerts.Logic.csproj"
+            "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Logic\\Alerts.Logic.csproj": {
+              "projectPath": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Logic\\Alerts.Logic.csproj"
             }
           }
         }
