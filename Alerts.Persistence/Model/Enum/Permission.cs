@@ -9,13 +9,13 @@ namespace Alerts.Persistence.Model.Enum
 {
     public enum Permission
     {
-        [EnumMember(Value = "Create")]
+        //[EnumMember(Value = "Create")]
         Create,
-        [EnumMember(Value = "Read")]
+        //[EnumMember(Value = "Read")]
         Read,
-        [EnumMember(Value = "Update")]
+        //[EnumMember(Value = "Update")]
         Update,
-        [EnumMember(Value = "Delete")]
+        //[EnumMember(Value = "Delete")]
         Delete
     }
 }

@@ -34,9 +34,7 @@ namespace Alerts.Logic.Security
                 new Claim(ClaimTypes.Role, user.role.ToString())
             };
 
-
             // Crear el token
-
             var token = new JwtSecurityToken(
                 _config["Jwt:Issuer"],
                 _config["Jwt:Audience"],

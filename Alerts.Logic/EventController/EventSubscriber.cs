@@ -1,11 +1,6 @@
 ﻿using Alerts.Logic.HubController;
 using Alerts.Persistence.Model.Enum;
 using Microsoft.AspNetCore.SignalR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Alerts.Logic.EventController
 {
@@ -19,17 +14,10 @@ namespace Alerts.Logic.EventController
             _eventAggregator = eventAggregator;
             _hubContext = hubContext;
             _eventAggregator.SubscribeEvent(Event.UserCreated.ToString(), sentNoti);
-            _eventAggregator.SubscribeEvent(Event.UserCreated.ToString(), mostrar);
-        }
-
-        public async Task mostrar()
-        {
-            Console.WriteLine("ELl mero mero +++++++++++++++++++++++++++++++++++");
         }
         public async Task sentNoti()
         {
             await _hubContext.Clients.All.SendAsync("ReceiveUserUpdate");
         }
-
     }
 }

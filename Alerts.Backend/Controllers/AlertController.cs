@@ -4,7 +4,9 @@ using Alerts.Logic.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Alerts.Persistence.Model;
 using Microsoft.AspNetCore.Authorization;
+using Alerts.Logic.Service;
 using Alerts.Persistence.Model.Enum;
+using static Alerts.Logic.Authorization.PermissionAuthorizationHandler;
 
 namespace Alerts.Backend.Controllers
 {
@@ -13,19 +15,20 @@ namespace Alerts.Backend.Controllers
     [Authorize]
     public class AlertController : ControllerBase
     {
-        private readonly IGenericRepository<Alert> _alertRepository;
         private readonly IGenericRepository<Application> _applicationRepository;
-        public AlertController(IGenericRepository<Alert> alertRepository, IGenericRepository<Application> applicationRepository)
+        private readonly AlertService _alertService;
+        public AlertController(IGenericRepository<Application> applicationRepository,
+                AlertService alertService)
         {
-            _alertRepository = alertRepository;
             _applicationRepository = applicationRepository;
+            _alertService = alertService;
         }
 
         [HttpGet]
-        [Authorize(Policy = "Read")]
+        [HasPermission(Permission.Read)]
         public async Task<IActionResult> GetAllAlerts()
         {
-            var alerts = await _alertRepository.GetAll();
+            var alerts = await _alertService.GetAllAlerts();
             if (alerts == null)
             {
                 return NoContent();
@@ -34,11 +37,11 @@ namespace Alerts.Backend.Controllers
 
         }
 
-        [HttpGet("{page},{pageSize}")]
-        [Authorize(Policy = "Read")]
-        public async Task<IActionResult> GetAllAlertPaginator(int page, int pageSize)
+        [HttpGet("paginator/filter")]
+        [HasPermission(Permission.Read)]
+        public async Task<IActionResult> Filter2([FromQuery] int page, [FromQuery] int pageSize, [FromQuery] string? filter = null, [FromQuery] string? startDate = null, [FromQuery] string? endDate = null)
         {
-            var alerts = await _alertRepository.GetAllPaginarot(page,pageSize);
+            var alerts = await _alertService.getWithPaginator(page, pageSize, filter, startDate, endDate);
             if (alerts == null)
             {
                 return NoContent();
@@ -48,10 +51,10 @@ namespace Alerts.Backend.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Policy = "Read")]
+        [HasPermission(Permission.Read)]
         public async Task<IActionResult> GetAlertById(long id)
         {
-            var alert = await _alertRepository.GetById(id);
+            var alert = await _alertService.GetAlertById(id);
 
             if (alert == null)
             {
@@ -62,7 +65,7 @@ namespace Alerts.Backend.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = "Create")]
+        [HasPermission(Permission.Create)]
         public async Task<IActionResult> CreateAlert([FromBody] AlertDTO alertDTO)
         {
             if (!ModelState.IsValid)
@@ -76,39 +79,39 @@ namespace Alerts.Backend.Controllers
             }
             var alert = AlertDTOMapper.MapToAlert(alertDTO, app);
 
-            await _alertRepository.Insert(alert);
+            await _alertService.CreateAlert(alert);
             return CreatedAtAction(nameof(GetAlertById), new { id = alert.Id }, alert);
         }
 
         [HttpPut("{id}")]
-        [Authorize(Policy = "Update")]
+        [HasPermission(Permission.Update)]
         public async Task<IActionResult> UpdateAlert(long id, [FromBody] AlertUpdateDTO alertUpdate)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var existingAlert = await _alertRepository.GetById(id);
+            var existingAlert = await _alertService.GetAlertById(id);
             if (existingAlert == null)
             {
                 return NotFound($"The system could not locate a Alert with the ID {id}. Please verify the ID and try again.");
             }
             var alert = AlertDTOMapper.MapUpdateToAlert(existingAlert, alertUpdate);
-            await _alertRepository.Update(alert);
+            await _alertService.UpdateAlert(alert);
 
             return Ok(alert);
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Policy = "Delete")]
+        [HasPermission(Permission.Delete)]
         public async Task<IActionResult> DeleteAlert(long id)
         {
-            var existingAlert = await _alertRepository.GetById(id);
+            var existingAlert = await _alertService.GetAlertById(id);
             if (existingAlert == null)
             {
                 return NotFound($"The system could not locate a alert with the ID {id}. Please verify the ID and try again.");
             }
-            await _alertRepository.Delete(existingAlert);
+            await _alertService.DeleteAlert(existingAlert);
 
             return NoContent();
         }

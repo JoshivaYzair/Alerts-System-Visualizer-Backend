@@ -8,7 +8,9 @@ namespace Alerts.Persistence.Model.Enum
 {
     public enum AlertStatus
     {
-        Active = 0,
-        Resolved = 1
+        New = 0,
+        InProgress = 1,
+        Done = 2,
+        Canceled = 3
     }
 }

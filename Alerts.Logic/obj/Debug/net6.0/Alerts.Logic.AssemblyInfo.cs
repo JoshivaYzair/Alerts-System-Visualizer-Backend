@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Alerts.Logic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4770a23c43c37c61b4a954a154ab3f21333dcbd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+724c4c0283188651d69bc59f19e8efef2c719835")]
 [assembly: System.Reflection.AssemblyProductAttribute("Alerts.Logic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Alerts.Logic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

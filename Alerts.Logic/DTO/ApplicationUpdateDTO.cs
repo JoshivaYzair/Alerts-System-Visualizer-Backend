@@ -17,6 +17,5 @@ namespace Alerts.Logic.DTO
         public string Url { get; set; }
         [MaxLength(100)]
         public string SupportEmail { get; set; }
-        public bool Active { get; set; }
     }
 }

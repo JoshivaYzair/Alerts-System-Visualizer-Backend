@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L4+/4077kbg7DbiIHjv6OFjyGPkz4+5Ir9qmJC/FIn70T2VfXCzCbjFDmajWMtj0U4l0GLJQpqFn4Zb0DOlj6g==",
+  "dgSpecHash": "Bp0z83+HACqQ9xhtUhilkWMBYsa3lpmIuJTQ+xIQHaPKdXsXbvtUbl8tbOcZ8axDtG3GgiFr9dJGZ9MCVqiazg==",
   "success": true,
   "projectFilePath": "C:\\Users\\joshi\\OneDrive\\Documentos\\GitHub\\Alerts-System-Visualizer\\Alerts.Backend\\Alerts.Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joshi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\joshi\\.nuget\\packages\\jetbrains.annotations\\2022.3.1\\jetbrains.annotations.2022.3.1.nupkg.sha512",
     "C:\\Users\\joshi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.27\\microsoft.aspnetcore.authentication.jwtbearer.6.0.27.nupkg.sha512",
     "C:\\Users\\joshi\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\joshi\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.2.0\\microsoft.aspnetcore.connections.abstractions.2.2.0.nupkg.sha512",
@@ -61,7 +62,8 @@
     "C:\\Users\\joshi\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\joshi\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\joshi\\.nuget\\packages\\system.threading.channels\\4.5.0\\system.threading.channels.4.5.0.nupkg.sha512",
-    "C:\\Users\\joshi\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+    "C:\\Users\\joshi\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\joshi\\.nuget\\packages\\x.pagedlist\\8.4.7\\x.pagedlist.8.4.7.nupkg.sha512"
   ],
   "logs": []
 }

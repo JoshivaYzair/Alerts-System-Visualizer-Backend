@@ -27,7 +27,8 @@ namespace Alerts.Persistence.Data
                 .HasOne(a => a.Application)
                 .WithMany(ap => ap.Alerts)
                 .HasForeignKey(a => a.ApplicationCode)  // Clave foránea de Alert
-                .HasPrincipalKey(ap => ap.Code);  // Clave primaria de Application
+                .HasPrincipalKey(ap => ap.Code)  // Clave primaria de Application
+                .OnDelete(DeleteBehavior.Restrict);  // Restricción ON DELETE RESTRICT
         }
 
         public DbSet<Alert> Alerts { get; set; }

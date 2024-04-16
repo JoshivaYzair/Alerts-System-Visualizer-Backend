@@ -109,3 +109,5 @@ C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Alerts.Backen
 C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Alerts.Backend\obj\Debug\net6.0\Alerts.Backend.pdb
 C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Alerts.Backend\obj\Debug\net6.0\Alerts.Backend.genruntimeconfig.cache
 C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Alerts.Backend\obj\Debug\net6.0\ref\Alerts.Backend.dll
+C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Alerts.Backend\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Alerts.Backend\bin\Debug\net6.0\X.PagedList.dll

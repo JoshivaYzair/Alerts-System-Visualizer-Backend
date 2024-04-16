@@ -67,8 +67,7 @@ namespace Alerts.Persistence.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Alert");
-
-            migrationBuilder.DropTable(
+                        migrationBuilder.DropTable(
                 name: "Application");
         }
     }

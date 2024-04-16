@@ -39,7 +39,5 @@ namespace Alerts.Persistence.Model
         public string ApplicationCode { get; set; }
         [JsonIgnore]
         public virtual Application Application { get; set; }
-        
-        
     }
 }

@@ -20,7 +20,6 @@ namespace Alerts.Logic.Mapper
                 Description = appDTO.Description,
                 Url = appDTO.Url,
                 SupportEmail = appDTO.SupportEmail,
-                Active = appDTO.Active,
                 Alerts = new List<Alert>()
             };
         }
@@ -30,7 +29,6 @@ namespace Alerts.Logic.Mapper
             existingApp.Description = AppDTO.Description;
             existingApp.Url = AppDTO.Url;
             existingApp.SupportEmail = AppDTO.SupportEmail;
-            existingApp.Active = AppDTO.Active;
 
             return existingApp;
         }

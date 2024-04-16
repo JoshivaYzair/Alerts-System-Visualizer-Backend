@@ -23,7 +23,7 @@ namespace Alerts.Persistence.Model
         public string Url { get; set; }
         [MaxLength (100)]
         public string SupportEmail { get; set; }
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
         [JsonIgnore]
         public List<Alert> Alerts { get; set; }
     }

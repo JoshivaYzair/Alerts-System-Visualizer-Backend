@@ -1,12 +1,15 @@
+using Alerts.Logic.Authorization;
 using Alerts.Logic.EventController;
 using Alerts.Logic.HubController;
 using Alerts.Logic.Interface;
+using Alerts.Logic.Repository;
 using Alerts.Logic.Security;
 using Alerts.Logic.Service;
 using Alerts.Persistence.Data;
 using Alerts.Persistence.Model;
 using Alerts.Persistence.Model.Enum;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -34,6 +37,14 @@ builder.Services.AddDbContext<AlertsDbContext>(
 
 builder.Services.AddScoped<IGenericRepository<Alert>, GenericRepository<Alert>>();
 builder.Services.AddScoped<IGenericRepository<Application>, GenericRepository<Application>>();
+builder.Services.AddScoped<AlertService>();
+builder.Services.AddScoped<ApplicationService>();
+
+builder.Services.AddSingleton<UserRolePermissionRepository>();
+builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>( 
+    sp => new PermissionAuthorizationHandler(
+            sp.GetRequiredService<UserRolePermissionRepository>()
+        )); 
 
 builder.Services.AddCors(options =>
 {
@@ -70,12 +81,23 @@ builder.Services.AddSwaggerGen(options => {
     });
 });
 
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy(Permission.Create.ToString(), policy => policy.RequireRole(Role.Administrator.ToString(), Role.User.ToString()));
+//    options.AddPolicy(Permission.Read.ToString(), policy => policy.RequireRole(Role.Administrator.ToString(), Role.User.ToString()));
+//    options.AddPolicy(Permission.Update.ToString(), policy => policy.RequireRole(Role.Administrator.ToString()));
+//    options.AddPolicy(Permission.Delete.ToString(), policy => policy.RequireRole(Role.Administrator.ToString()));
+//});
+
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy(Permission.Create.ToString(), policy => policy.RequireRole(Role.Administrator.ToString(), Role.User.ToString()));
-    options.AddPolicy(Permission.Read.ToString(), policy => policy.RequireRole(Role.Administrator.ToString(), Role.User.ToString()));
-    options.AddPolicy(Permission.Update.ToString(), policy => policy.RequireRole(Role.Administrator.ToString()));
-    options.AddPolicy(Permission.Delete.ToString(), policy => policy.RequireRole(Role.Administrator.ToString()));
+    foreach (var permission in Enum.GetValues(typeof(Permission)).Cast<Permission>())
+    {
+        options.AddPolicy(
+            permission.ToString(),
+            policy => policy.Requirements.Add(new PermissionRequirement(permission))
+            );
+    }
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

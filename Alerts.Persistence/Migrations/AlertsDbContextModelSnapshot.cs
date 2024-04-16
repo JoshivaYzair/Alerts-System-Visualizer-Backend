@@ -156,7 +156,7 @@ namespace Alerts.Persistence.Migrations
                         .WithMany("Alerts")
                         .HasForeignKey("ApplicationCode")
                         .HasPrincipalKey("Code")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Application");

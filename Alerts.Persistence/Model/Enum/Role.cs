@@ -9,10 +9,10 @@ namespace Alerts.Persistence.Model.Enum
 {
     public enum Role
     {
-        [EnumMember(Value = "User")]
+        //[EnumMember(Value = "User")]
         User,
 
-        [EnumMember(Value = "Administrator")]
+        //[EnumMember(Value = "Administrator")]
         Administrator
 
     }

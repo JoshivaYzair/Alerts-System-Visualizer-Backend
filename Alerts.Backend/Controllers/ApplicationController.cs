@@ -1,12 +1,11 @@
 ﻿using Alerts.Logic.DTO;
-using Alerts.Logic.Interface;
 using Alerts.Logic.Mapper;
 using Alerts.Logic.Service;
-using Alerts.Persistence.Model;
+using Alerts.Persistence.Model.Enum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using static Alerts.Logic.Authorization.PermissionAuthorizationHandler;
 
 namespace Alerts.Backend.Controllers
 {
@@ -15,44 +14,30 @@ namespace Alerts.Backend.Controllers
     [Authorize]
     public class ApplicationController : ControllerBase
     {
-        private readonly IGenericRepository<Application> _applicationRepository;
-
-        public ApplicationController(IGenericRepository<Application> applicationRepository)
+        private readonly ApplicationService _applicationService;
+        public ApplicationController(ApplicationService applicationService)
         {
-            this._applicationRepository = applicationRepository;
+            this._applicationService = applicationService;
         }
 
-        [HttpGet]
-        [Authorize(Policy = "Read")]
-        public async Task<IActionResult> GetAllApplications()
+        [HttpGet("paginator/filter")]
+        [HasPermission(Permission.Read)]
+        public async Task<IActionResult> GetAllAppPaginator([FromQuery] int page, [FromQuery] int pageSize, [FromQuery] string? filter = null)
         {
-            var app = await _applicationRepository.GetAll();
-            if (app == null)
+            var apps = await _applicationService.getAppList(page,pageSize,filter);
+            if (apps == null)
             {
                 return NoContent();
             }
-            return Ok(app);
-
-        }
-
-        [HttpGet("{page},{pageSize}")]
-        [Authorize(Policy = "Read")]
-        public async Task<IActionResult> GetAllAppPaginator(int page, int pageSize)
-        {
-            var alerts = await _applicationRepository.GetAllPaginarot(page, pageSize);
-            if (alerts == null)
-            {
-                return NoContent();
-            }
-            return Ok(alerts);
+            return Ok(apps);
 
         }
 
         [HttpGet("{id}")]
-        [Authorize(Policy = "Read")]
+        [HasPermission(Permission.Read)]
         public async Task<IActionResult> GetApplicationtById(long id)
         {
-            var app = await _applicationRepository.GetById(id);
+            var app = await this._applicationService.getAppById(id);
 
             if (app == null)
             {
@@ -63,29 +48,21 @@ namespace Alerts.Backend.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = "Create")]
+        [HasPermission(Permission.Create)]
         public async Task<IActionResult> CreateApplication([FromBody] ApplicationDTO ApplicationDTO)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            var App = ApplicationDTOMapper.MapToApplication(ApplicationDTO);
-            try {
-                await _applicationRepository.Insert(App);
-            }catch (DbUpdateException ex)
-            {
-                if (ex.InnerException is PostgresException postgresException && postgresException.SqlState == "23505")
-                {
-                    return BadRequest($"The code: {App.Code} you have entered already exists.");
-                }
-            }
-            return CreatedAtAction(nameof(GetApplicationtById), new { id = App.Id }, App);
+            var app = ApplicationDTOMapper.MapToApplication(ApplicationDTO);
+            
+            await this._applicationService.createApp(app);
+            return CreatedAtAction(nameof(GetApplicationtById), new { id = app.Id }, app);
         }
 
         [HttpPut("{id}")]
-        [Authorize(Policy = "Update")]
+        [HasPermission(Permission.Update)]
         public async Task<IActionResult> UpdateApplication(long id, [FromBody] ApplicationUpdateDTO appUpdate)
         {
             if (!ModelState.IsValid)
@@ -93,27 +70,27 @@ namespace Alerts.Backend.Controllers
                 return BadRequest(ModelState);
             }
 
-            var existingApplication = await _applicationRepository.GetById(id);
+            var existingApplication = await this._applicationService.getAppById(id);
             if (existingApplication == null)
             {
                 return NotFound($"The system could not locate a Application with the ID {id}. Please verify the ID and try again.");
             }
             var App = ApplicationDTOMapper.MapUpdateToApplication(existingApplication, appUpdate);
-            await _applicationRepository.Update(App);
+            await this._applicationService.updateApp(App);
 
             return Ok(App);
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Policy = "Delete")]
+        [HasPermission(Permission.Delete)]
         public async Task<IActionResult> DeleteApplication(long id)
         {
-            var existingApp = await _applicationRepository.GetById(id);
+            var existingApp = await this._applicationService.getAppById(id);
             if (existingApp == null)
             {
                 return NotFound($"The system could not locate a Application with the ID {id}. Please verify the ID and try again.");
             }
-            await _applicationRepository.Delete(existingApp);
+            await this._applicationService.deleteApp(existingApp);
             return NoContent();
         }
     }
