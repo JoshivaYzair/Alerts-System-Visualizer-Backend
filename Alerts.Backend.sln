@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alerts.Persistence", "Alert
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alerts.Logic", "Alerts.Logic\Alerts.Logic.csproj", "{DB20FDD9-DEE8-48C4-BB2D-96BEFA4AE26F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Testing", "Unit.Testing\Unit.Testing.csproj", "{360B2647-E9D4-4F70-B9B6-1DC9732D19EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DB20FDD9-DEE8-48C4-BB2D-96BEFA4AE26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB20FDD9-DEE8-48C4-BB2D-96BEFA4AE26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB20FDD9-DEE8-48C4-BB2D-96BEFA4AE26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360B2647-E9D4-4F70-B9B6-1DC9732D19EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360B2647-E9D4-4F70-B9B6-1DC9732D19EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360B2647-E9D4-4F70-B9B6-1DC9732D19EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360B2647-E9D4-4F70-B9B6-1DC9732D19EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

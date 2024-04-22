@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Alerts.Logic.Service;
 using Alerts.Persistence.Model.Enum;
 using static Alerts.Logic.Authorization.PermissionAuthorizationHandler;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Alerts.Backend.Controllers
 {
@@ -42,7 +43,7 @@ namespace Alerts.Backend.Controllers
         public async Task<IActionResult> Filter2([FromQuery] int page, [FromQuery] int pageSize, [FromQuery] string? filter = null, [FromQuery] string? startDate = null, [FromQuery] string? endDate = null)
         {
             var alerts = await _alertService.getWithPaginator(page, pageSize, filter, startDate, endDate);
-            if (alerts == null)
+            if (alerts.items.IsNullOrEmpty())
             {
                 return NoContent();
             }
@@ -55,13 +56,14 @@ namespace Alerts.Backend.Controllers
         public async Task<IActionResult> GetAlertById(long id)
         {
             var alert = await _alertService.GetAlertById(id);
-
-            if (alert == null)
+            
+            if (alert==null)
             {
                 return BadRequest($"The system could not locate a alert with the ID {id}. Please verify the ID and try again.");
             }
 
             return Ok(alert);
+
         }
 
         [HttpPost]

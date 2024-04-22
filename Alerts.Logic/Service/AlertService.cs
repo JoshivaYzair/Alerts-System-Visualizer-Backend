@@ -53,9 +53,10 @@ namespace Alerts.Logic.Service
 
         public async Task<Alert> GetAlertById(long id)
         {
-            return await _alertsRepository.GetById(id);
+            var alert = await _alertsRepository.GetById(id);
+            return alert;
         }
-        public async Task<ItemsResponse<Alert>> getWithPaginator(int page, int pageSize, string filter, String startDate, String endDate)
+        public async Task<ItemsResponse<Alert>> getWithPaginator(int page, int pageSize, string? filter, string? startDate, string? endDate)
         {
             Expression<Func<Alert, bool>> defaultPredicate = e => EF.Property<bool>(e, "Active");
 
@@ -85,6 +86,10 @@ namespace Alerts.Logic.Service
 
             var alerts = await _alertsRepository.GetPaginator(filterExpression, page, pageSize);
 
+            if (alerts == null)
+            {
+                return new ItemsResponse<Alert> { items = new List<Alert>(), TotalItems = 0 };
+            }
             return new ItemsResponse<Alert> { items = alerts.ToList(), TotalItems = alerts.TotalItemCount };
         }
     }

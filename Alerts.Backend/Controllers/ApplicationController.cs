@@ -4,6 +4,7 @@ using Alerts.Logic.Service;
 using Alerts.Persistence.Model.Enum;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using static Alerts.Logic.Authorization.PermissionAuthorizationHandler;
 
@@ -25,7 +26,7 @@ namespace Alerts.Backend.Controllers
         public async Task<IActionResult> GetAllAppPaginator([FromQuery] int page, [FromQuery] int pageSize, [FromQuery] string? filter = null)
         {
             var apps = await _applicationService.getAppList(page,pageSize,filter);
-            if (apps == null)
+            if (apps.items.IsNullOrEmpty())
             {
                 return NoContent();
             }

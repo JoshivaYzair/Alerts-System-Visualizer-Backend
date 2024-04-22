@@ -42,7 +42,7 @@ namespace Alerts.Logic.Service
             return await this._appRepository.GetById(id);
         }
 
-        public async Task<ItemsResponse<Application>> getAppList(int page, int pageSize, string filter) {
+        public async Task<ItemsResponse<Application>> getAppList(int page, int pageSize, string? filter) {
             Expression<Func<Application, bool>> defaultPredicate = e => EF.Property<bool>(e, "Active");
             Expression<Func<Application, bool>> filterExpression = defaultPredicate;
 
@@ -55,7 +55,12 @@ namespace Alerts.Logic.Service
             }
             
             var apps = await _appRepository.GetPaginator(filterExpression, page, pageSize);
-            
+
+            if (apps == null)
+            {
+                return new ItemsResponse<Application> { items = new List<Application>(), TotalItems = 0 };
+            }
+
             return new ItemsResponse<Application> { items = apps.ToList(), TotalItems = apps.TotalItemCount };
         }
     }
