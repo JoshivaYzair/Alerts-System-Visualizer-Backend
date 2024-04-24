@@ -132,5 +132,3 @@ C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Unit.Testing\
 C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Unit.Testing\obj\Debug\net6.0\Unit.Testing.pdb
 C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Unit.Testing\obj\Debug\net6.0\Unit.Testing.genruntimeconfig.cache
 C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Unit.Testing\obj\Debug\net6.0\ref\Unit.Testing.dll
-C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Unit.Testing\bin\Debug\net6.0\Castle.Core.dll
-C:\Users\joshi\OneDrive\Documentos\GitHub\Alerts-System-Visualizer\Unit.Testing\bin\Debug\net6.0\Moq.dll

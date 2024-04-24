@@ -40,7 +40,7 @@ namespace Alerts.Backend.Controllers
 
         [HttpGet("paginator/filter")]
         [HasPermission(Permission.Read)]
-        public async Task<IActionResult> Filter2([FromQuery] int page, [FromQuery] int pageSize, [FromQuery] string? filter = null, [FromQuery] string? startDate = null, [FromQuery] string? endDate = null)
+        public async Task<IActionResult> GetAllAlertPaginator([FromQuery] int page, [FromQuery] int pageSize, [FromQuery] string? filter = null, [FromQuery] string? startDate = null, [FromQuery] string? endDate = null)
         {
             var alerts = await _alertService.getWithPaginator(page, pageSize, filter, startDate, endDate);
             if (alerts.items.IsNullOrEmpty())

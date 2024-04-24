@@ -51,7 +51,7 @@ namespace Unit.Testing
             var endDate = "";
 
             // Act
-            var result = await _Alertcontroller.Filter2(page, pageSize, filter, startDate, endDate);
+            var result = await _Alertcontroller.GetAllAlertPaginator(page, pageSize, filter, startDate, endDate);
 
             // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
@@ -68,7 +68,7 @@ namespace Unit.Testing
             var endDate = "";
 
             // Act
-            var result = await _Alertcontroller.Filter2(page, pageSize, filter, startDate, endDate);
+            var result = await _Alertcontroller.GetAllAlertPaginator(page, pageSize, filter, startDate, endDate);
 
             // Assert
             var okResult = Assert.IsType<NoContentResult>(result);
